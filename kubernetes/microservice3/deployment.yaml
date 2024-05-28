@@ -1,0 +1,25 @@
+# kubernetes/microservice3/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: microservice3
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: microservice3
+  template:
+    metadata:
+      labels:
+        app: microservice3
+    spec:
+      containers:
+        - name: microservice3
+          image: microservice3:latest
+          ports:
+            - containerPort: 8080
+          env:
+            - name: KAFKA_BROKERS
+              value: kafka:9092
+            - name: KAFKA_TOPICS
+              value: topic1,topic3

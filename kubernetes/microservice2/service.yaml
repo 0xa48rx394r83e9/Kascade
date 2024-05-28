@@ -1,0 +1,11 @@
+# kubernetes/microservice2/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: microservice2
+spec:
+  selector:
+    app: microservice2
+  ports:
+    - port: 80
+      targetPort: 8080

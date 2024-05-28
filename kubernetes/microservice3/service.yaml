@@ -1,0 +1,11 @@
+# kubernetes/microservice3/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: microservice3
+spec:
+  selector:
+    app: microservice3
+  ports:
+    - port: 80
+      targetPort: 8080
